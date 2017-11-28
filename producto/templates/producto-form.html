@@ -1,0 +1,91 @@
+{% extends 'left-sidebar.html' %}
+
+{%block cuerpo%}sidebar-fixed topnav-fixed forms-elements{%endblock%}
+
+{%block content-wrapper%}
+
+<div id="main-content-wrapper" class="content-wrapper ">
+<form enctype="multipart/form-data" action="" method="POST"> {% csrf_token %}
+
+
+
+
+
+	<div class="row">
+		<div class="col-lg-12 ">										
+			<div class="form-group">							
+					<div class="col-lg-3 ">{{form_producto.nombre.label}}<br>{{form_producto.nombre}}</div>
+			</div>	
+		</div>	
+	</div>	
+									<hr class="inner-separator" />
+
+
+	<div class="row">
+		<div class="col-lg-12 ">										
+			<div class="form-group">							
+					<div class="col-lg-3 ">{{form_producto.imagen.label}}<br>{{form_producto.imagen}}</div>
+					<div class="col-lg-3 ">{{form_producto.tipo.label}}<br>{{form_producto.tipo}}</div>
+					<div class="col-lg-3 ">{{form_producto.pventa.label}}<br>{{form_producto.pventa}}</div>
+					<div class="col-lg-3 ">{{form_producto.pcosto.label}}<br>{{form_producto.pcosto}}</div>
+			</div>	
+		</div>	
+	</div>	
+									<hr class="inner-separator" />
+	<div class="row">
+		<div class="col-lg-12 ">										
+			<div class="form-group">							
+					<div class="col-lg-3 ">{{form_producto.fecha.label}}<br>{{form_producto.fecha}}</div>
+					<div class="col-lg-6 ">{{form_producto.observacion.label}}<br>{{form_producto.observacion}}</div>
+					<div class="col-lg-2 ">{{form_producto.activo.label}}<br>{{form_producto.activo}}</div>
+			</div>
+		</div>
+	</div>
+
+									<hr class="inner-separator" />
+
+
+	<div class="row">
+		<div class="col-lg-12 ">
+			<div class="form-group">							
+					<div class="col-lg-3 "><input type="submit" class="btn btn-success" value="Registrar"></input></div>
+			</div>
+		</div>
+	</div>
+
+
+</form>
+</div>
+
+
+{%endblock%}
+
+
+
+{% block js %}
+	<script src="/static/assetss/js/jquery/jquery-2.1.0.min.js"></script>
+	<script src="/static/assetss/js/bootstrap/bootstrap.js"></script>
+	<script src="/static/assetss/js/plugins/modernizr/modernizr.js"></script>
+	<script src="/static/assetss/js/plugins/bootstrap-tour/bootstrap-tour.custom.js"></script>
+	<script src="/static/assetss/js/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="/static/assetss/js/king-common.js"></script>
+	<script src="/static/assetss/js/plugins/bootstrap-switch/bootstrap-switch.min.js"></script>
+	<script src="/static/assetss/js/plugins/jquery-maskedinput/jquery.masked-input.min.js"></script>
+	<script src="/static/assetss/js/plugins/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+	<script src="/static/assetss/js/jquery-ui/jquery-ui-1.10.4.custom.min.js"></script>
+	<script src="/static/assetss/js/plugins/jqallrangesliders/jQAllRangeSliders-min.js"></script>
+	<script src="/static/assetss/js/plugins/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+	<script src="/static/assetss/js/plugins/jquery-simplecolorpicker/jquery.simplecolorpicker.js"></script>
+	<script src="/static/assetss/js/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+	<script src="/static/assetss/js/plugins/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+	<script src="/static/assetss/js/plugins/daterangepicker/daterangepicker.js"></script>
+	<script src="/static/assetss/js/plugins/moment/moment.min.js"></script>
+	<script src="/static/assetss/js/plugins/bootstrap-slider/bootstrap-slider.js"></script>
+	<script src="/static/assetss/js/plugins/select2/select2.min.js"></script>
+	<script src="/static/assetss/js/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+	<script src="/static/assetss/js/king-elements.js"></script>
+{%endblock%}
+
+
+
+
