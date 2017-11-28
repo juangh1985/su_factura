@@ -1,0 +1,116 @@
+{% extends 'index.html' %}
+
+{%block cuerpo%}sidebar-fixed topnav-fixed forms-elements{%endblock%}
+
+{%block content-wrapper%}
+
+<div id="main-content-wrapper" class="content-wrapper ">
+	
+	
+	<form action="" method="post"> <input type='hidden' name='csrfmiddlewaretoken' value='1RBoAl15fGIUgydbsJmIDTClPPRk9oofTi6cQvlGNT9hJdvhb8qLgA1Q0IUBXSUJ' />
+	<div class="row">
+		<div class="col-lg-12 ">										
+			<div class="form-group">							
+
+<tr><th><label for="id_trabajador">Trabajador:</label></th><td><select name="trabajador" required placeholder="trabajador" class="select2" id="id_trabajador">
+  <option value="" selected>---------</option>
+
+{%for trabajador in t%}
+  <option value="{{trabajador.id}}">{{trabajador.nombre}}</option>
+
+{%endfor%}
+</select></td></tr>
+<tr><th><label for="datepicker">Inicio: :</label></th><td><input type="text" name="inicio" required placeholder="inicio" id="datepicker" class="form-control" /></td></tr>
+
+
+			</div>	
+		</div>	
+	</div>	
+
+
+
+
+			<div class="modal-footer">
+				<button onClick="javascript:cerrar();" type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+				<input type="submit" class="btn btn-success" value="Registrar" onClick="javascript:cerrar();" ></input>
+			</div>
+</form>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<!--
+<form action="" method="post"> {% csrf_token %}
+	<div class="row">
+		<div class="col-lg-12 ">										
+			<div class="form-group">							
+
+{{form_asistencia}}
+
+
+			</div>	
+		</div>	
+	</div>	
+
+
+
+
+			<div class="modal-footer">
+				<button onClick="javascript:cerrar();" type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+				<input type="submit" class="btn btn-success" value="Registrar" onClick="javascript:cerrar();" ></input>
+			</div>
+</form>
+-->
+</div>
+{%endblock%}
+
+
+{%block js%}
+
+
+<script language="javascript">
+function cerrar(){
+window.close()
+}
+</script>
+
+
+	<script src="/static/assets/js/jquery/jquery-2.1.0.min.js"></script>
+	<script src="/static/assets/js/bootstrap/bootstrap.js"></script>
+	<script src="/static/assets/js/plugins/modernizr/modernizr.js"></script>
+	<script src="/static/assets/js/plugins/bootstrap-tour/bootstrap-tour.custom.js"></script>
+	<script src="/static/assets/js/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="/static/assets/js/king-common.js"></script>
+	<script src="demo-style-switcher/assets/js/deliswitch.js"></script>
+	<script src="/static/assets/js/plugins/bootstrap-switch/bootstrap-switch.min.js"></script>
+	<script src="/static/assets/js/plugins/jquery-maskedinput/jquery.masked-input.min.js"></script>
+	<script src="/static/assets/js/plugins/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+	<script src="/static/assets/js/jquery-ui/jquery-ui-1.10.4.custom.min.js"></script>
+	<script src="/static/assets/js/plugins/jqallrangesliders/jQAllRangeSliders-min.js"></script>
+	<script src="/static/assets/js/plugins/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+	<script src="/static/assets/js/plugins/jquery-simplecolorpicker/jquery.simplecolorpicker.js"></script>
+	<script src="/static/assets/js/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+	<script src="/static/assets/js/plugins/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+	<script src="/static/assets/js/plugins/daterangepicker/daterangepicker.js"></script>
+	<script src="/static/assets/js/plugins/moment/moment.min.js"></script>
+	<script src="/static/assets/js/plugins/bootstrap-slider/bootstrap-slider.js"></script>
+	<script src="/static/assets/js/plugins/select2/select2.min.js"></script>
+	<script src="/static/assets/js/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+	<script src="/static/assets/js/king-elements.js"></script>
+{%endblock%}

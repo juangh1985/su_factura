@@ -1,0 +1,123 @@
+{% extends 'left-sidebar.html' %}
+{%block cuerpo%}sidebar-fixed topnav-fixed{%endblock%}
+
+{%block content-wrapper%}
+		<!-- MAIN CONTENT WRAPPER -->
+		<div id="main-content-wrapper" class="content-wrapper ">
+			<!-- top general alert -->
+<!--
+			<div class="alert alert-danger top-general-alert">
+				<span>If you <strong>can't see the logo</strong> on the top left, please reset the style on right style switcher (for upgraded theme only).</span>
+				<button type="button" class="close">&times;</button>
+			</div>
+-->
+			<!-- end top general alert -->
+
+			<!-- main -->
+			<div class="content">
+				<div class="main-header">
+					<h2>Clientes</h2>
+					<em>tables with lot of features and interactivity</em>
+				</div>
+				
+										<a type="button" class="btn btn-danger" href="/cliente_form"><i class="fa fa-plus"></i> Incorporar Registro</a>
+<br>
+<br>
+				
+				
+				<div class="main-content">
+
+					<!-- FEATURED DATA TABLE -->
+					<div class="widget widget-table">
+						<div class="widget-header">
+							<h3><i class="fa fa-table"></i> Featured Table</h3> <em> - <a href="http://datatables.net/" target="_blank">jQuery Data Table</a> with sorting feature, live search and pagination</em></div>
+						<div class="widget-content">
+							<table id="featured-datatable" class="table table-sorting table-striped table-hover datatable">
+								<thead>
+									<tr>
+										<th>cliente</th>
+										<th>imagen</th>
+										<th>correo</th>
+										<th>telefono</th>
+										<th>direccion</th>
+										<th>estado</th>
+										<th>empresa</th>
+										<th>accion</th>
+									</tr>
+								</thead>
+								<tbody>
+									{%for m in cliente%}
+									<tr>
+										<td>{{m.cliente}}</td>
+										<td><img src="imagenes/{{m.imagen}}" width="64" class="img img-rounded"></img></td>
+										<td>{{m.correo}}</td>
+										<td>{{m.telefono}}</td>
+										<td>{{m.direccion}}</td>
+										<td>
+											{%if m.estado %}
+											<i class="fa fa-check-circle" style="color:green"></i>
+											{%else%}
+											<i class="fa fa-times-circle" style="color:red"></i>											
+											{%endif%}
+										
+										
+										</td>
+										<td>
+											{%if m.empresa %}
+											<i class="fa fa-check-circle" style="color:green"></i>
+											{%else%}
+											<i class="fa fa-times-circle" style="color:red"></i>											
+											{%endif%}
+										
+										
+										</td>
+										<td>
+										<a href="/cliente_edit?id={{m.id}}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> editar</a>
+										<button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal{{m.id}}"><i class="fa fa-trash"></i> eliminar</button>
+										<div class="modal fade" id="myModal{{m.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+														<h4 class="modal-title" id="myModalLabel">Eliminar registro</h4>
+													</div>
+													<div class="modal-body">
+														<p>Esta seguro que desea eliminar este registro?</p>
+														<p>La accion hara que se eliminen todos los registros relacionados.</p>
+
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times-circle"></i> Cerrar</button>
+														<a type="button" class="btn btn-danger" href="/cliente_delete?id={{m.id}}"><i class="fa fa-check-circle"></i> Confirmar</a>
+													</div>
+												</div>
+											</div>
+										</div>
+										</td>
+										
+										
+										
+										
+										
+										
+									</tr>
+									{%endfor%}
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- END FEATURED DATA TABLE -->
+	
+				</div>
+			</div>
+			<!-- /main -->
+			<!-- FOOTER -->
+			<footer class="footer">
+				&copy; 2017 The Develovers
+			</footer>
+			<!-- END FOOTER -->
+		</div>
+		<!-- END CONTENT WRAPPER -->
+{%endblock%}
+
+
